@@ -1,6 +1,6 @@
 const express = require('express');
 
-//onst Hobbits = require('../hobbits/hobbitsModel.js');
+const Videogames = require('../videogames/videogamesModel.js');
 
 const server = express();
 
@@ -10,14 +10,14 @@ server.get('/', (req, res) => {
   res.status(200).json({ api: 'up' });
 });
 
-// server.get('/hobbits', (req, res) => {
-//   Hobbits.getAll()
-//     .then(hobbits => {
-//       res.status(200).json(hobbits);
-//     })
-//     .catch(error => {
-//       res.status(500).json(error);
-//     });
-// });
+server.get('/videogames', (req, res) => {
+  Videogames.getAll()
+    .then(videogames => {
+      res.status(200).json(videogames);
+    })
+    .catch(error => {
+      res.status(500).json(error);
+    });
+});
 
 module.exports = server;
