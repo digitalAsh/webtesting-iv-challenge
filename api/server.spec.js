@@ -34,7 +34,7 @@ describe('server.js', () => {
 
     describe('GET /videogames', () => {
         it('should return videogames', async () => {
-            const res =  await request(server).get('./videogames');
+            const res =  await request(server).get('/videogames');
             expect(res.status).toBe(200);
             expect(res.body).toEqual([])
         })
